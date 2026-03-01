@@ -1,0 +1,37 @@
+Try this commands on SRC folder...
+
+a) git hash-object
+-> Nothing will happen it required some input
+
+b) echo "Pramod Ahire"
+-> it will print Pramod Ahire in next line
+
+c) git hash-object "Pramod Ahire"
+-> it will say fatal error reason it required input from primary or secondary memory
+
+d) echo "Pramod Ahire">text.txt
+-> text.txt file get created with data "Pramod Ahire"
+
+e) git hash-object text.txt
+-> b8ef3148668bae826cfa428a92e35c8a0cd5e36c
+Note :- 40 character output got printed
+
+f) git cat-file -p b8ef3148668bae826cfa428a92e35c8a0cd5e36c
+-> fatal: Not a valid object name b8ef3148668bae826cfa428a92e35c8a0cd5e36c
+Note :- -p means Prity Print. cat-file unable to find this value reason is this data is not present on physical location
+
+i) git hash-object text.txt -w
+-> b8ef3148668bae826cfa428a92e35c8a0cd5e36c
+Note:- Some time it throws an error or only print output.. None of file got created reason is .git folder is missing..
+
+j) git init
+-> Initialized empty Git repository in <your project path>/src/.git/
+Note :- Check hidded folder got created on your project location. (checked on "Hidden Items" on your system to see hidden folder)
+
+k) git hash-object text.txt -w
+-> b8ef3148668bae826cfa428a92e35c8a0cd5e36c..
+Note :- got to the .git\object folder you will see b8 folder contain file name ef3148668bae826cfa428a92e35c8a0cd5e36c..
+Now this file contains data "Pramod Ahire"
+
+l) git cat-file -p b8ef3148668bae826cfa428a92e35c8a0cd5e36c
+-> "Pramod Ahire"
